@@ -1,3 +1,9 @@
+# 个人仿造QQ音乐项目
+
+## 预期功能
+### 搜索 用户个人页面 歌单推荐 发现
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
