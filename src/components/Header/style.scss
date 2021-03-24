@@ -1,14 +1,45 @@
 .header{
     &-inner{
-        width: 80%;
-        min-width: 800px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-around;
-        align-items: center;
+        &-first{
+            width: 80%;
+            min-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        &-second{
+            width: 80%;
+            min-width: 800px;
+            margin: 0 auto;
+            border-bottom: #d9d9d9 solid 1px;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+        }
     }
     &-nav{
         flex: 1 0 200px;
+    }
+    &-logo{
+        width: 170px;
+        height: 46px;
+        background-image: url(../../../static/images/logo.png);
+    }
+}
+.route-link{
+    &-active{
+        background-color: #31c27c;
+    }
+    &-div{
+        color: black;
+        height: 60px;
+        width: 80px;
+        line-height: 40px;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px;
     }
 }
