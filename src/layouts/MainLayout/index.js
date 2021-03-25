@@ -6,9 +6,8 @@ const MainLayout = ({ children }) => {
   const [state, setState] = useState(0);
   return (
     <div className="qqmusic-home">
-      <Header className="qqmusic-home-header" />
+      <Header />
       {children}
-      {/* <Bandstand /> */}
     </div>
   );
 };

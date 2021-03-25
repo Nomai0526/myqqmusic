@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './style.scss';
 
-const Footer = () => {
+const MyComponent = () => {
   const [state, setState] = useState(0);
   return (
-    <div className="footer" />
+    <div>
+      MyComponent
+    </div>
   );
 };
-
-export default Footer;
+export default MyComponent;

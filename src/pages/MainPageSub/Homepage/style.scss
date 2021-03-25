@@ -1,0 +1,21 @@
+.home-page{
+    &-title{
+        height: 100px;
+        text-align: center;
+        font-size: 20px;
+        line-height: 100px;
+        background-color: #f4f4f4;
+    }
+    &-body{
+        display: flex;
+        width: 80%;
+        height: 360px;
+        min-width: 1100px;
+        margin: 0 auto;
+        justify-content: space-between;
+        background-color: #f4f4f4;
+    }
+    &-content{
+        background-color: #f4f4f4;
+    }
+}
