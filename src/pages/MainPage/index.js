@@ -23,9 +23,6 @@ const MainPage = () => {
         </div>
         <Switch>
           <Route path="/" component={HomePage} exact />
-          {/* <Route path="/about1" component={Test} />
-          <Route path="/about2" component={Test} />
-          <Route path="/about3" component={Test} /> */}
         </Switch>
       </BrowserRouter>
     </div>

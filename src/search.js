@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './App';
+import Search from './pages/SearchPage/index';
 import '@babel/polyfill';
 import 'antd/dist/antd.css';
 // import './scss/iconfont.scss';
 
 render(
-  <App />,
-  document.getElementById('app'),
+  <Search />,
+  document.getElementById('search'),
 );

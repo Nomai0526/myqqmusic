@@ -6,10 +6,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 __webpack_base_uri__ = '/';
 
 module.exports = {
-  entry: ['./src/js/index.js', './index.html'],
+  entry: {
+    index: './src/index.js',
+    search: './src/search.js',
+  },
   output: {
     path: path.resolve(__dirname, '../build'),
-    filename: './js/result.js',
+    filename: 'js/[name].js',
     // publicPath: '/',
   },
   module: {
@@ -27,12 +30,44 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
+            presets: ['@babel/preset-env', '@babel/preset-react'],
           },
         },
       },
+      // {
+      //   test: /\.(png|jpg|gif|svg)$/i,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         limit: 3000,
+      //         outputPath: 'images',
+      //         name: '[hash:5].[ext]',
+      //       },
+      //     },
+      //   ],
+      // },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(html)$/,
+        use: ['html-loader'],
+      },
+      {
+        rules: [
+          {
+            test: /\.s[ac]ss$/i,
+            use: [
+              // Creates `style` nodes from JS strings
+              "style-loader",
+              // Translates CSS into CommonJS
+              "css-loader",
+              // Compiles Sass to CSS
+              "sass-loader",
+            ],
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -44,23 +79,22 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.(html)$/,
-        use: ['html-loader'],
-      },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: './index.html',
-  }),
-  new CleanWebpackPlugin(),
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: '首页',
+      filename: 'index.html',
+      template: './index.html',
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      title: '搜索',
+      filename: 'search.html',
+      template: './search.html',
+      chunks: ['search'],
+    }),
+    new CleanWebpackPlugin(),
   ],
   mode: 'production',
-  devServer: {
-    open: true,
-    compress: true,
-    port: 3000,
-    hot: true,
-  },
-  devtool: 'cheap-module-source-map',
 };

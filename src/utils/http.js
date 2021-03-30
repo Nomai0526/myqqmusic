@@ -10,10 +10,8 @@ service.interceptors.response.use((response) => {
     status, data, statusText, headers,
   } = response;
   if (status === 200) {
-    console.log('200');
     return headers['content-type'] === 'application/json' ? JSON.parse(data) : data;
   }
-  console.log('else');
   message.warning(`${status}-${statusText}`);
   return response;
 });
